@@ -1,3 +1,4 @@
+import datetime
 import os
 import requests
 from dotenv import load_dotenv
@@ -23,17 +24,27 @@ def course(session, year, semester):
     source = request.text
     soup = bs(source, 'html.parser')
     courses = soup.find_all('a', class_='coursefullname')
-    courses = list(map(lambda s: s.text, courses))
+    courses = list(map(lambda s: name2num(s.text), courses))
     return courses
+
+
+# 강의 이름을 학수번호로 변환
+def name2num(course):
+    return course.split('(')[-2].strip()
 
 
 if __name__ == '__main__':
     load_dotenv()
-    session = login(os.environ.get('ID'), os.environ.get('PASSWORD'))
+    id = os.environ.get('ID')
+    password = os.environ.get('PASSWORD')
+    session = login(id, password)
     courses = []
 
-    for year in range(2015, 2023):
+    start = int(id[:4])
+    end = int(datetime.datetime.today().strftime("%Y"))
+
+    for year in range(start, end + 1):
         for semester in range(1, 3):
-            for type in range(4):
+            for type in range(2):
                 courses += course(session, year, f'{semester}{type}')
     print(courses)
