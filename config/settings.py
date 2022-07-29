@@ -10,36 +10,25 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-import environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ENV setting
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-
-ENV_FILE_PATH = os.path.join(BASE_DIR, '.env')
-# Take environment variables from .env file
-environ.Env.read_env(env_file=ENV_FILE_PATH)
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-DEBUG = env('DEBUG')
+# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-8pqysr_xjnn(!$ulfaj#=k^h*s+%-)+g#zt4whb@_)hfft_jgc')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-SECRET_KEY = env('SECRET_KEY')
+DEBUG = int(os.environ.get('DEBUG', 1))
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -86,7 +75,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
