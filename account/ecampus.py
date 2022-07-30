@@ -1,20 +1,28 @@
 import datetime
 import os
 import requests
+from django.contrib.auth.models import User
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup as bs
 
 
 # e-campus 로그인
-def login(id, password):
+def authenticate(id, password):
     user_info = {'username': id, 'password': password}
     session = requests.Session()
-    request = session.post('https://ecampus.smu.ac.kr/login/index.php', data=user_info)
+    request = requests.post('https://ecampus.smu.ac.kr/login/index.php', data=user_info)
 
     # 로그인 성공
     if request.url == 'https://ecampus.smu.ac.kr/':
-        return session
-    return -1
+        user = User.objects.filter(username=id)
+        if user:
+            return user.first()
+        else:
+            user = User.objects.create(username=id)
+            return user
+    return None
+
+
 
 
 # 수강한 모든 강의 이름 크롤링
