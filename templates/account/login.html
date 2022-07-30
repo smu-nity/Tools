@@ -13,25 +13,43 @@
 {% include 'navbar.html' %}
 
 <section>
-    <div class="container my-5" style="width: 30%">
-        <center>
-            <div class="col-4">
-                <a href="/" class="a-tag">
-                    <h1 class="nav-title">HIP</h1>
-                </a>
-            </div>
-        </center>
-        <br>
-        <form class="login" method="POST">
-            {% csrf_token %}
-            <input type="text" name="username" />
-            <input type="password" name="password" />
-            <button class="btn btn-primary" type="submit" style="width: 100%">로그인</button>
-        </form>
+    <div class="container my-5">
+        <div class="row justify-content-between">
+            <form class="login" method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" />
+                <input type="password" name="password" />
+                <button class="btn btn-primary" type="submit" style="width: 100%">로그인</button>
+            </form>
+        </div>
     </div>
 </section>
 
-{% include 'footer.html' %}
+<div class="fixed-bottom">
+    {% include 'footer.html' %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
+
+    </div>
+</section>
+
+<div class="fixed-bottom">
+    {% include 'footer.html' %}
+</div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

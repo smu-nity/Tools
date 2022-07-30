@@ -1,7 +1,8 @@
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import login as auth_login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from account.ecampus import authenticate
 
 
 def login(request):
@@ -11,7 +12,7 @@ def login(request):
     elif request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(username, password)
 
         if user:
             auth_login(request, user)
