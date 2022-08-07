@@ -9,29 +9,11 @@
     <section>
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-lg-6 text-light">
-                    <h1 class="mt-5">Smunity</h1>
-                    <p>파이썬 진영의 가장 대표적인 웹프레임워크 중 하나인 django를 이용하여 여러분만의 블로그 사이트를 만들어보세요.</p>
-                </div>
-
+                <div class="col-lg-6 text-light"></div>
                 <div class="col-lg-5 mt-5">
-                    <h2 class="text-light">Blog - Recent posts</h2>
-                    {% for post in recent_posts %}
-                        <div class="card mt-1">
-                            <div class="card-body">
-                                <h6><a href="{{ post.get_absolute_url }}" class="text-decoration-none text-dark">{{ post.title }}</a></h6>
-                                <span class="badge badge-pill badge-light float-right">
-                                    <img class="mr-1 rounded-circle" width="20px" src="{{ post.get_avatar_url }}" alt="{{ post.author }}">
-                                    {{ post.author.username }}
-                                    &nbsp;
-                                    &nbsp;
-                                    {{ post.created_at }}
-                               </span>
-                            </div>
-                        </div>
-                    {% endfor %}
+                    <h1 class="display-4 fw-bold lh-1 mb-3 text-light">Smunity</h1>
+                    <p class="col-lg-10 fs-4 text-light">상명대학교 학생을 위한 졸업요건 검사 사이트</p>
                 </div>
-
             </div>
         </div>
     </section>
