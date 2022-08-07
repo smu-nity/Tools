@@ -1,8 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from account import views
+from accounts import views
 
-app_name = 'account'
+app_name = 'accounts'
 
 urlpatterns = [
     path('login/', views.login, name='login'),

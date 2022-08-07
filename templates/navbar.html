@@ -9,10 +9,10 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/account/login/"><i class="fas fa-trophy"></i> 랭킹</a>
+                    <a class="nav-link" href="/accounts/login/"><i class="fas fa-trophy"></i> 랭킹</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/account/login/"><i class="fas fa-history"></i> 졸업요건</a>
+                    <a class="nav-link" href="/accounts/login/"><i class="fas fa-history"></i> 졸업요건</a>
                 </li>
 
                 {% if user.is_authenticated %}
@@ -21,15 +21,15 @@
                             <i class="fa fa-user"></i> {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/account/logout/">로그아웃</a>
+                            <a class="dropdown-item" href="/accounts/logout/">로그아웃</a>
                         </div>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/account/login/"><i class="fas fa-sign-in-alt"></i> 로그인</a>
+                        <a class="nav-link" href="/accounts/login/"><i class="fas fa-sign-in-alt"></i> 로그인</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/account/login/"><i class="fas fa-user-plus"></i> 회원가입</a>
+                        <a class="nav-link" href="/accounts/login/"><i class="fas fa-user-plus"></i> 회원가입</a>
                     </li>
                 {% endif %}
             </ul>

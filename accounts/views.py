@@ -2,7 +2,7 @@ from django.contrib.auth import login as auth_login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from account.ecampus import authenticate
+from accounts.ecampus import authenticate
 
 
 def login(request):
