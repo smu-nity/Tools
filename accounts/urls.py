@@ -7,4 +7,5 @@ app_name = 'accounts'
 urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('agree/', views.agree, name='agree'),
 ]

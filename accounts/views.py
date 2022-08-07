@@ -21,3 +21,6 @@ def login(request):
         else:
             # Return an 'invalid login' error message.
             return render(request, 'account/login.html')
+
+def agree(request):
+    return render(request, 'account/agree.html')
