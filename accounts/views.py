@@ -7,7 +7,7 @@ from accounts.ecampus import authenticate
 
 def login(request):
     if request.method == "GET":
-        return render(request, 'account/login.html')
+        return render(request, 'accounts/login.html')
 
     elif request.method == "POST":
         username = request.POST['username']
@@ -20,7 +20,24 @@ def login(request):
             return HttpResponseRedirect(reverse('core:home'))
         else:
             # Return an 'invalid login' error message.
-            return render(request, 'account/login.html')
+            return render(request, 'accounts/login.html')
 
 def agree(request):
-    return render(request, 'account/agree.html')
+    if request.method == "GET":
+        return render(request, 'accounts/agree.html')
+
+    elif request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username, password)
+
+        if user:
+            return HttpResponseRedirect(reverse('accounts:signup'))
+        else:
+            # Return an 'invalid login' error message.
+            return render(request, 'accounts/login.html')
+
+
+
+def signup(request):
+    return render(request, 'accounts/signup.html')
