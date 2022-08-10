@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-nav px-2 py-2">
+    <div class="container-nav px-1 py-1">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <span class="fs-3">Smunity</span>
+            <span class="fs-4">Smunity</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,27 +11,27 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link fs-5" href="/accounts/login/"><i class="fas fa-trophy"></i> 랭킹</a>
+                    <a class="nav-link fs-5" href="/accounts/login/">랭킹</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fs-5" href="/accounts/login/"><i class="fas fa-history"></i> 졸업요건</a>
+                    <a class="nav-link fs-5" href="/accounts/login/">졸업요건</a>
                 </li>
 
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle fs-5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user"></i> {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/accounts/logout/">로그아웃</a>
+                            <a class="dropdown-item fs-5" href="/accounts/logout/">로그아웃</a>
                         </div>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="/accounts/login/"><i class="fas fa-sign-in-alt"></i> 로그인</a>
+                        <a class="nav-link fs-5" href="/accounts/login/">로그인</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="/accounts/agree/"><i class="fas fa-user-plus"></i> 회원가입</a>
+                        <a class="nav-link fs-5" href="/accounts/agree/">회원가입</a>
                     </li>
                 {% endif %}
             </ul>
