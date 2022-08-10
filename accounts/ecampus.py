@@ -8,14 +8,7 @@ def authenticate(id, password):
     session = login(id, password)
 
     if session:
-        information(session)
-
-        user = User.objects.filter(username=id)
-        if user:
-            return user.first()
-        else:
-            user = User.objects.create(username=id)
-            return user
+        return information(session)
     return None
 
 
@@ -37,6 +30,9 @@ def information(session):
     source = request.text
     soup = bs(source, "html.parser")
 
-    print(soup.find('input', id='id_department').get('value'))
-    print(soup.find('input', id='id_firstname').get('value'))
-    print(soup.find('input', id='id_email').get('value'))
+    context = {
+        "name": soup.find('input', id='id_firstname').get('value'),
+        "department": soup.find('input', id='id_department').get('value'),
+        "email": soup.find('input', id='id_email').get('value')
+    }
+    return context
