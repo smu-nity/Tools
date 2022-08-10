@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup as bs
 
 
 # 로그인
-def authenticate(id, password):
+def ecampus(id, password):
     session = login(id, password)
 
     if session:
