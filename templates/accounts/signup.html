@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+        {% csrf_token %}
+        <center><h1 class="nav-title">회원가입</h1></center><br>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingName" name="name" value="{{ name }}" readonly>
+          <label for="floatingName">이름</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingID" name="username" value="{{ form.username.value|default_if_none:id }}" readonly>
+          <label for="floatingID">학번</label>
+        </div>
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingDep" name="department" value="{{ department }}" readonly>
+          <label for="floatingDep">학과</label>
+        </div>
+          <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingDep" name="email" value="{{ form.email.value|default_if_none:email }}" readonly>
+          <label for="floatingDep">이메일</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" name="password1" value="{{ form.password1.value|default_if_none:'' }}">
+          <label for="floatingPassword">비밀번호</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" name="password2" value="{{ form.password2.value|default_if_none:'' }}">
+          <label for="floatingPassword">비밀번호 확인</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
