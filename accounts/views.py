@@ -6,6 +6,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from accounts.ecampus import ecampus
 from accounts.forms import UserForm
+from core.models import Information
+from accounts.models import Profile
 
 
 def login(request):
@@ -49,18 +51,29 @@ def agree(request):
 
 
 def signup(request):
+    context = request.session.get('context')
+
     if request.method == "POST":
         form = UserForm(request.POST)
+
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)  # 사용자 인증
-            auth_login(request, user)  # 로그인
+            information = Information.objects.filter(year=context['id'][:4], department=context['department']).first()
+
+            if information:     # 지원하는 학과와 학번인지 확인
+                form.save()
+                username = form.cleaned_data.get('username')
+                raw_password = form.cleaned_data.get('password1')
+                user = authenticate(username=username, password=raw_password)
+                Profile.objects.create(user=user, information=information, name=context['name'])
+                auth_login(request, user)  # 로그인
+            else:
+                messages.error(request, '⚠️ 서비스에서 지원하지 않는 학과와 학번 입니다.')
             return redirect('core:home')
+        else:
+            messages.error(request, '⚠️ 비밀번호가 동일하지 않습니다.')
+            return redirect('accounts:signup')
 
     else:
         form = UserForm()
-    context = request.session.get('context')
     context['form'] = form
     return render(request, 'accounts/signup.html', context)
