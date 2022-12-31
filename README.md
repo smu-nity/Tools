@@ -23,7 +23,7 @@
 > 
 > **오우석 [(Ohwooseok)](https://github.com/Ohwooseok)**
 > 
-> **호세헌 [(https://github.com/seheonnn)]()**
+> **호세헌 [(seheonnn)](https://github.com/seheonnn)**
 > 
 > **김민우 [(minpot)](https://github.com/minpot)**
 > 
