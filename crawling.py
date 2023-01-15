@@ -29,7 +29,7 @@ def information(session):
 
 # 학기별 과목 정보 크롤링
 def subject(session, year, semester):
-    url = f'https://ecampus.smu.ac.kr/local/ubion/user/?year={year}&semester={semester}0'
+    url = f'https://ecampus.smu.ac.kr/local/ubion/user/?year={year}&semester={semester}'
     request = session.get(url)
     source = request.text
     soup = bs(source, "html.parser")
@@ -37,11 +37,12 @@ def subject(session, year, semester):
 
 # 전체 과목 정보 크롤링
 def subjects(session, start, end):
+    semesters = [10, 11, 20, 21]
     subjects = []
     for year in range(start, end):
-        for semester in range(1, 3):
+        for semester in semesters:
             subjects += subject(session, year, semester)
-    subjects = list(map(lambda x: x.text, subjects))
+    subjects = list(map(lambda x: changeFormat(x['href']), subjects))
     return subjects
 
 
@@ -54,4 +55,4 @@ def getSBJ_ID(session, year, semester, SBJ_NO):
 
 
 def changeFormat(url):
-    return int(url.split('&id=')[1])
+    return int(url.split('id=')[1])
