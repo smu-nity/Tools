@@ -45,11 +45,13 @@ def subjects(session, start, end):
     return subjects
 
 
-def main():
-    session = login('ID', 'PASSWORD')
-    data = subjects(session, 2019, 2023)
-    print(data)
-    print(len(data))
+def getSBJ_ID(session, year, semester, SBJ_NO):
+    url = f'https://ecampus.smu.ac.kr/local/ubassistant/index.php?a_year={year}&a_semester={semester}&a_type=idnumber&a_keyword={SBJ_NO}'
+    request = session.get(url)
+    source = request.text
+    soup = bs(source, "html.parser")
+    return list(map(lambda x: changeFormat(x['href']), soup.find_all('a', class_='audit')))
 
-if __name__ == '__main__':
-    main()
+
+def changeFormat(url):
+    return int(url.split('&id=')[1])
