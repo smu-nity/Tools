@@ -2,7 +2,7 @@ import json
 from crawling import getSBJ_ID, login
 
 
-def dataset(year, semester):
+def main(year, semester):
     session = login('201911019', '1q2w3e4r!')
     subjects = []
     file_path = f'dataset/{year}_{semester}.json'
@@ -18,4 +18,4 @@ def dataset(year, semester):
                     subjects.append(subject)
                 SBJS.append(SBJ_NO)
 
-dataset(2019, 10)
+main(2019, 10)
