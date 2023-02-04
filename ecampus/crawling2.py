@@ -45,5 +45,5 @@ if __name__ == '__main__':
     driver = webdriver.Chrome(ChromeDriverManager().install())
     driver = webdriver.Chrome('chromedriver')
 
-    login("201911019", "1q2w3e4r!")
+    login("201911019", "password")
 

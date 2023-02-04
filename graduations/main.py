@@ -1,5 +1,4 @@
 import json
-from crawling import getSBJ_ID, login
 
 
 def main(year):

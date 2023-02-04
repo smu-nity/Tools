@@ -67,4 +67,4 @@ def changeFormat(url):
     return int(url.split('id=')[1])
 
 
-login('201911019', '1q2w3e4r!')
+login('201911019', 'password')
