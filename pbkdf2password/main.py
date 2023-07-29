@@ -7,4 +7,5 @@ with open(file_path, 'r') as f:
     datas = json.load(f)
     for data in datas:
         if data['model'] == 'auth.user':
+            print(data['fields']['username'])
             print(data['fields']['password'])
