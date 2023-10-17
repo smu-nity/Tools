@@ -3,7 +3,6 @@ import requests
 
 cookies = {
     'WMONID': '52mcwiNmRf3',
-    '_gid': 'GA1.3.1095688725.1697453010',
     '_ga_5BEDF8DSQJ': 'GS1.1.1697453111.1.0.1697453111.0.0.0',
     '_ga_61DCRX9WGH': 'GS1.1.1697453101.1.1.1697453230.0.0.0',
     '_ga_G9YNZX5B4C': 'GS1.1.1697453010.1.0.1697453231.0.0.0',
@@ -30,6 +29,7 @@ print(SMJSESSIONID)
 
 url = 'https://smul.smu.ac.kr/UsrRecMatt/list.do'
 cookies['SMJSESSIONID'] = SMJSESSIONID
+cookies['_gid'] = 'GA1.3.1095688725.1697453010'
 res = requests.post(url=url, cookies=cookies, data=data)
 print(str(res))
 print(res.text)
