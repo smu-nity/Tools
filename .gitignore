@@ -447,5 +447,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux
 
-migration/json
-migration/sql
+migration/user/json
+migration/user/sql
