@@ -1,0 +1,62 @@
+[
+  {
+    "number": "HALF0102",
+    "name": "인간과언어",
+    "credit": 3
+  },
+  {
+    "number": "HALF0122",
+    "name": "글로벌문화와문화콘텐츠",
+    "credit": 3
+  },
+  {
+    "number": "HALF0202",
+    "name": "지구화시대의역사학과한국사의재조명",
+    "credit": 3
+  },
+  {
+    "number": "HALF0302",
+    "name": "세계신화의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9014",
+    "name": "이야기속의논리와철학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9302",
+    "name": "명저읽기(일반)",
+    "credit": 3
+  },
+  {
+    "number": "HALF9305",
+    "name": "명저읽기(과학,기술)",
+    "credit": 3
+  },
+  {
+    "number": "HALF9338",
+    "name": "명저읽기(문학)",
+    "credit": 3
+  },
+  {
+    "number": "HALF9340",
+    "name": "세계문화교류",
+    "credit": 3
+  },
+  {
+    "number": "HALF9358",
+    "name": "휴먼커뮤니케이션",
+    "credit": 3
+  },
+  {
+    "number": "HALF9374",
+    "name": "공간과문명,인간",
+    "credit": 3
+  },
+  {
+    "number": "HALF9439",
+    "name": "사회문제해결을위한문화와콘텐츠",
+    "credit": 3
+  }
+]

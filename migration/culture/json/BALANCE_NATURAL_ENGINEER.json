@@ -1,0 +1,62 @@
+[
+  {
+    "number": "HALF0502",
+    "name": "생명과학의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF0537",
+    "name": "자연과학의세계",
+    "credit": 3
+  },
+  {
+    "number": "HALF9041",
+    "name": "과학의철학적이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9239",
+    "name": "대학수학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9252",
+    "name": "물리현상의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9321",
+    "name": "미래생활과화학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9362",
+    "name": "정량적사고",
+    "credit": 3
+  },
+  {
+    "number": "HALF9403",
+    "name": "우주의역사",
+    "credit": 3
+  },
+  {
+    "number": "HALF9319",
+    "name": "창의적프로그래밍입문",
+    "credit": 3
+  },
+  {
+    "number": "HALF9329",
+    "name": "미래사회와디지털기술",
+    "credit": 3
+  },
+  {
+    "number": "HALF9405",
+    "name": "기초AI와콘텐츠",
+    "credit": 3
+  },
+  {
+    "number": "HALF9441",
+    "name": "플랫폼비즈니스와사회적가치",
+    "credit": 3
+  }
+]

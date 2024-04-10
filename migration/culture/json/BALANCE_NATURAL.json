@@ -1,0 +1,42 @@
+[
+  {
+    "number": "HALF0502",
+    "name": "생명과학의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF0537",
+    "name": "자연과학의세계",
+    "credit": 3
+  },
+  {
+    "number": "HALF9041",
+    "name": "과학의철학적이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9239",
+    "name": "대학수학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9252",
+    "name": "물리현상의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9321",
+    "name": "미래생활과화학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9362",
+    "name": "정량적사고",
+    "credit": 3
+  },
+  {
+    "number": "HALF9403",
+    "name": "우주의역사",
+    "credit": 3
+  }
+]
