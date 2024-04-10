@@ -1,0 +1,72 @@
+[
+  {
+    "number": "HALF0447",
+    "name": "인구와사회",
+    "credit": 3
+  },
+  {
+    "number": "HALF4033",
+    "name": "경제학의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF5013",
+    "name": "글로벌경제의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9030",
+    "name": "법과민주주의",
+    "credit": 3
+  },
+  {
+    "number": "HALF9031",
+    "name": "현대사회와심리학",
+    "credit": 3
+  },
+  {
+    "number": "HALF9245",
+    "name": "현대사회와인간",
+    "credit": 3
+  },
+  {
+    "number": "HALF9266",
+    "name": "현대정치의이해",
+    "credit": 3
+  },
+  {
+    "number": "HALF9280",
+    "name": "의식주와소비문화",
+    "credit": 3
+  },
+  {
+    "number": "HALF9320",
+    "name": "리터러시탐구와응용",
+    "credit": 2
+  },
+  {
+    "number": "HALF9326",
+    "name": "창의적사고의프레임워크",
+    "credit": 3
+  },
+  {
+    "number": "HALF9343",
+    "name": "세계종교와문화",
+    "credit": 3
+  },
+  {
+    "number": "HALF9379",
+    "name": "인터넷윤리",
+    "credit": 3
+  },
+  {
+    "number": "HALF9440",
+    "name": "현대사회와윤리",
+    "credit": 2
+  },
+  {
+    "number": "HALR1041",
+    "name": "문화다양성과글로벌시민",
+    "credit": 2
+  }
+]
