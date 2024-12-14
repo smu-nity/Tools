@@ -19,7 +19,7 @@ def save_file(text, file_path):
         file.write(text)
 
 
-sql, insert = '', 'INSERT INTO accounts_user (username, password, name, email, department_id, year_id, is_active, is_staff, completed_semester, current_year)\nVALUES '
+sql, insert = '', 'INSERT INTO COMMON_MEMBER (username, password, name, email, department_id, year_id, role, created_at, updated_at)\nVALUES '
 user_file, profile_file, result_file = 'json/auth_user.json', 'json/accounts_profile.json', 'sql/accounts_user.sql'
 users, profiles = read_json(user_file), read_json(profile_file)
 profiles = list2dict(profiles)
@@ -31,5 +31,5 @@ for user in users:
         username, password, email = user['username'], user['password'], user['email']
         is_active, is_staff = user['is_active'], user['is_staff']
         name, department_id, year_id = profile['name'], profile['department_id'], profile['year_id']
-        sql += f"{insert}('{username}', '{password}', '{name}', '{email}', {department_id}, {year_id}, {is_active}, {is_staff}, 0, 0);\n"
+        sql += f"{insert}('{username}', '{password}', '{name}', '{email}', {department_id}, {year_id}, 'ROLE_USER', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);\n"
 save_file(sql, result_file)
